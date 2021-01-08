@@ -14,7 +14,7 @@ class Allergies(object):
         self.score = score
         self.allergic_to = []
         for i, allergen in enumerate(Allergies.allergens):
-            if score & 2**i == 2**i:
+            if bool(score & 2**i):
                 self.allergic_to.append(allergen)
 
     def is_allergic_to(self, item):
@@ -25,7 +25,3 @@ class Allergies(object):
     @property
     def lst(self):
         return self.allergic_to
-
-
-allergies = Allergies(255)
-print(allergies.lst)
