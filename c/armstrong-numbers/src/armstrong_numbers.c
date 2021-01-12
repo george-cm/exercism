@@ -1,38 +1,29 @@
-#include <stdio.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 #include "armstrong_numbers.h"
 
 bool is_armstrong_number(int candidate)
 {
-    int digit;
-    int remaining;
-    int sum = 0;
+    // get the number of digits in candidate
     int length = 0;
-
-    remaining = candidate;
+    int remaining = candidate;
     while (remaining > 0)
     {
-        digit = remaining % 10;
         remaining = remaining / 10;
         length += 1;
     }
 
+    // calculate the sum of the power of the digits
+    int sum = 0;
     remaining = candidate;
     while (remaining > 0)
     {
-        digit = remaining % 10;
+        int digit = remaining % 10;
         remaining = remaining / 10;
         sum += pow2(digit, length);
     }
 
-    if (sum == candidate)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return sum == candidate;
 }
 
 int pow2(int n, int m)
