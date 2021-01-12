@@ -4,3 +4,4 @@ __pycache__
 elm-stuff
 *.out
 vendor
+*.tgz
