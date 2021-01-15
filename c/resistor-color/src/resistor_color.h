@@ -12,7 +12,8 @@ typedef enum
     BLUE,
     VIOLET,
     GREY,
-    WHITE
+    WHITE,
+    COUNT
 } resistor_band_t;
 
 #endif
