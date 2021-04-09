@@ -12,15 +12,10 @@ class Allergies(object):
 
     def __init__(self, score):
         self.score = score
-        self._allergic_to = []
-        for i, allergen in enumerate(Allergies.allergens):
-            if bool(score & 2**i):
-                self._allergic_to.append(allergen)
+        self._allergic_to = [allergen for i, allergen in enumerate(Allergies.allergens) if score & (1 << i)]       
 
     def allergic_to(self, item):
-        if item in self._allergic_to:
-            return True
-        return False
+        return item in self._allergic_to
 
     @property
     def lst(self):
