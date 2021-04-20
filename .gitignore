@@ -5,3 +5,4 @@ elm-stuff
 *.out
 vendor
 *.tgz
+*.exe
